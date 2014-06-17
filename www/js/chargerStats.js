@@ -15,15 +15,17 @@ function loadStats()
 }
 
 function printStats(response){
-//Puts a divider inside the content divider and creates holders for the data from the response
-$("#content").append("<div class='statisticsLabel' id='statisticsLabel'> </div>");	
-	$("#statisticsLabel").append("Charge Rate:  		<span id='rate'> 			</span>  <br>");	 	
-	$("#statisticsLabel").append("Target Charge:		<span id='targetCharge'>	</span> %<br>");
-	$("#statisticsLabel").append("Estimated Time Left: 	<span id='timeLeft'> 		</span>");
-//Populates the holders with the data from response
-		$("#rate").text(response.chargingRate);
-		$("#targetCharge").text(response.targetCharge);
-		$("#timeLeft").text(convertTime(response.timeLeft));
+	//Clear the content divider of previous information
+	$("#content").empty();
+	//Puts a divider inside the content divider and creates holders for the data from the response
+	$("#content").append("<div class='statisticsLabel' id='statisticsLabel'> </div>");	
+		$("#statisticsLabel").append("Charge Rate:  		<span id='rate'> 			</span>  <br>");	 	
+		$("#statisticsLabel").append("Target Charge:		<span id='targetCharge'>	</span> %<br>");
+		$("#statisticsLabel").append("Estimated Time Left: 	<span id='timeLeft'> 		</span>");
+	//Populates the holders with the data from response
+			$("#rate").text(response.chargingRate);
+			$("#targetCharge").text(response.targetCharge);
+			$("#timeLeft").text(convertTime(response.timeLeft));
 
 }
 

@@ -1,9 +1,8 @@
 $("#statsButton").click(function()
 		{
-			$("#content").empty();
-			showBackButton();
-			loadStats();			
-			//$("#content").load("chargerStats.html");
+			alert("hi");
+			loadStats();	
+			showBackButton();		
 		});
 
 $("#chargeButton").click(function()
@@ -26,7 +25,6 @@ $("#connectServer").click(function()
 		   });
 		});
 		
-
 $("#test").click(function()
 		{
 			
@@ -39,8 +37,21 @@ $("#test").click(function()
 					$("#serverResponse").text(response);
 			 },
 		error: function(){ printError("Failed to connect to server. <br> Try and reconnect."); }
-		   });
-			
-			
+		   });		
 		});
+		
+function loadMainMenu(){
+	$("#content").empty();
+
+	//Creates buttons in the content divider
+	$("#content").append("<button class='mainButton'> Charger Statistics </button>")
+					.click(function () { 
+						loadStats();	
+						showBackButton();	
+						});
+	
+	$("#content").append("<button class='mainButton' id='chargeButton'>  Set Charging Type	</button>").click(function () { alert('1'); }); 	
+	$("#content").append("<button class='mainButton' id='test'>		   Test Server			</button>").click(function () { alert('2'); });
+	$("#content").append("<button class='mainButton' id='connectServer'> Connect to server	</button>").click(function () { alert('3'); });
+}
 		

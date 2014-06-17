@@ -8,10 +8,6 @@ function initateApplication(){
 	removeBackButton();
 }
 
-function loadMainMenu() {
-   $("#content").load("menu.html");  
-}
-
 function loadStatus(){
 	$("#infoLabel").load("status.html");
 }
