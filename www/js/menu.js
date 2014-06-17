@@ -43,15 +43,22 @@ $("#test").click(function()
 function loadMainMenu(){
 	$("#content").empty();
 
-	//Creates buttons in the content divider
-	$("#content").append("<button class='mainButton'> Charger Statistics </button>")
+	//Creates buttons
+	var statsButton = $("<button class='mainButton'> Charger Statistics </button>")
 					.click(function () { 
 						loadStats();	
 						showBackButton();	
 						});
 	
-	$("#content").append("<button class='mainButton' id='chargeButton'>  Set Charging Type	</button>").click(function () { alert('1'); }); 	
-	$("#content").append("<button class='mainButton' id='test'>		   Test Server			</button>").click(function () { alert('2'); });
-	$("#content").append("<button class='mainButton' id='connectServer'> Connect to server	</button>").click(function () { alert('3'); });
+	var chargeButton = $("<button class='mainButton'> Set Charging Type </button>")
+					.click(function () { 
+						loadChargeButton();
+						showBackButton();	
+						});
+	
+	$("#content").append(statsButton);
+	$("#content").append(chargeButton);
+	$("#content").append(charge);
+	$("#content").append(charge);
 }
 		

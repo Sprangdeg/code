@@ -23,3 +23,22 @@ function convertTime(timeLeft){
 	else 
 		return minutes + "min";;
 }
+
+function loadChargeButtons(){
+	$("#content").empty();
+	
+	var statsButton = $("<button class='mainButton'> Charger Statistics </button>")
+					.click(function () { 
+						loadStats();	
+						showBackButton();	
+						});
+	
+	var chargeButton = $("<button class='mainButton'> Set Charging Type </button>")
+					.click(function () { 
+						loadChargeButton();
+						showBackButton();	
+						});
+	
+	$("#content").append(statsButton);
+	$("#content").append(chargeButton);
+}

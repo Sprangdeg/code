@@ -35,5 +35,42 @@ function testServerResponse(response){
 }
 
 
+function loadMainMenu(){
+	$("#content").empty();
+
+	//Creates buttons
+	var statsButton = $("<button class='mainButton'> Charger Statistics </button>")
+					.click(function () { 
+						loadStats();	
+						showBackButton();	
+						});
+	
+	var chargeButton = $("<button class='mainButton'> Set Charging Type </button>")
+					.click(function () { 
+						loadChargeButton();
+						showBackButton();	
+						});
+	
+	$("#content").append(statsButton);
+	$("#content").append(chargeButton);
+	$("#content").append(charge);
+	$("#content").append(charge);
+}
+
+function connectToCharger(){
+	$.ajax({
+		type: 'POST',
+		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
+		data: {'request': "status"},
+		timeout: 3000,
+		success: function(response){
+				printResponse(jQuery.parseJSON(response));				
+			 },
+		error: function(){ 
+				printError("Failed to connect to server. <br> Try and reconnect."); 
+				}
+		   });
+}
+
 
 
