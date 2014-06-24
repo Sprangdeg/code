@@ -5,11 +5,8 @@ $(window).load(initateApplication());
 function initateApplication(){
 	loadStatus();
 	loadMainMenu();
+	
 	removeBackButton();
-}
-
-function loadStatus(){
-	$("#infoLabel").load("status.html");
 }
 
 function showBackButton(){
@@ -34,7 +31,7 @@ function testServerResponse(response){
 	$("#serverResponse").text(response);
 }
 
-
+//Loads the buttons in to the content divider
 function loadMainMenu(){
 	$("#content").empty();
 

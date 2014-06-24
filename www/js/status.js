@@ -1,13 +1,21 @@
+function loadStatus(){
+	connectToCharger();
+	printResponse(response);
+}
+
 function connectToCharger(){
+	alert("test");
 	$.ajax({
 		type: 'POST',
 		url: 'http://danu6.it.nuigalway.ie/bonstrom/project/server.php',
 		data: {'request': "status"},
 		timeout: 3000,
 		success: function(response){
-				printResponse(jQuery.parseJSON(response));				
+				alert("test");
+				return jQuery.parseJSON(response);				
 			 },
 		error: function(){ 
+			alert("test");
 				printError("Failed to connect to server. <br> Try and reconnect."); 
 				}
 		   });
